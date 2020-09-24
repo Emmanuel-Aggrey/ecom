@@ -18,7 +18,9 @@ def index(request):
     products = Product.objects.filter(is_available=True)
 
         # print(request.session['history'])
-    resent_view_products = Product.objects.filter(slug__in=(request.session['history']))
+    resent_view_products = ''
+    if request.session.get('history',None):
+        resent_view_products = Product.objects.filter(slug__in=(request.session['history']))
 
   
   
@@ -61,6 +63,9 @@ def category_view(request,id):
     allrelated = Sub_Category.objects.get(id=id)
 
     products = allrelated.products.filter(is_available=True)
+    resent_view_products = ''
+    if request.session.get('history',None):
+        resent_view_products = Product.objects.filter(slug__in=(request.session['history']))
 
 
     # print(products)
@@ -68,7 +73,7 @@ def category_view(request,id):
     context ={
         'products':products,
         'allrelated':allrelated,
-        'resent_view_products':Product.objects.filter(slug__in=(request.session['history']))
+        'resent_view_products':resent_view_products,
 
     }
     return render(request,'categories.html',context)

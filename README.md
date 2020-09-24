@@ -1,2 +1,2 @@
-# mysql-django-eommerce-website
+#django-eommerce-website
 # ecom

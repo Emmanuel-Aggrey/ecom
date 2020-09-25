@@ -1,6 +1,7 @@
 from django.db import models
 from django.template.defaultfilters import  slugify
 from django.shortcuts import reverse
+
 # Create your models here.
 class Base_Model(models.Model):
     date_add = models.DateTimeField(auto_now=True)

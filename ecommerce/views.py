@@ -20,7 +20,7 @@ def index(request):
         # print(request.session['history'])
     resent_view_products = ''
     if request.session.get('history',None):
-        resent_view_products = Product.objects.filter(slug__in=(request.session['history']))
+        resent_view_products = Product.objects.filter(slug__in=(request.session['history']))[:8]
 
   
   
@@ -65,7 +65,7 @@ def category_view(request,id):
     products = allrelated.products.filter(is_available=True)
     resent_view_products = ''
     if request.session.get('history',None):
-        resent_view_products = Product.objects.filter(slug__in=(request.session['history']))
+        resent_view_products = Product.objects.filter(slug__in=(request.session['history']))[:8]
 
 
     # print(products)

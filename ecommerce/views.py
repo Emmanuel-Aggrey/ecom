@@ -9,9 +9,11 @@ from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.template.defaultfilters import  slugify
 
 from .models import Category, Product, Sub_Category
+from hashids import Hashids
 
 from .forms import ProductForm
 # Create your views here.
+hashids = Hashids()
 
 
 def index(request):
@@ -183,6 +185,14 @@ def producCreatetView(request,id):
         image = form.cleaned_data['image']
         description = form.cleaned_data['description']
         slug  = slugify(name)
+
+
+
+        id_ = Product.objects.values_list('pk', flat=True).count()
+        id_ = str(hashids.encode(id_))
+     
+        slug =  slug+'-'+id_
+
 
         Product.objects.bulk_create([
         Product(name=name,price=price,description=description,image=image,category_id=id,slug=slug)

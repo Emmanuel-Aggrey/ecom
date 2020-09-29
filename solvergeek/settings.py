@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'easy_thumbnails',
     'cloudinary_storage',
     'cloudinary',
+    'ckeditor',
 
     'ecommerce',
     'cart',
@@ -200,4 +201,15 @@ CLOUDINARY_STORAGE = {
     'CLOUD_NAME': config('CLOUD_NAME'),
     'API_KEY': config('API_KEY'),
     'API_SECRET': config('API_SECRET'),
+}
+
+
+CKEDITOR_UPLOAD_PATH = 'content/ckeditor/'
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 300,
+        'width': 600,
+    },
 }

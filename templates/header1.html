@@ -1,9 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Mirrored from portotheme.com/html/porto_ecommerce/demo _9/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 May 2020 05:10:15 GMT -->
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,9 +8,9 @@
 
     <title>XtayConnect Africa</title>
 
-    <meta name="keywords" content="XtayConnect AfricaTM " />
-    <meta name="description" content="EKOL XTAYCONNECT AFRICA LIMITED  Online Store/Website">
-    <meta name="author" content="XtayConnect AfricaTM ">
+    <meta name="keywords" content="XtayConnect"/>
+    <meta name="description" content="EKOL XTAYCONNECT AFRICA LIMITED  Online Store">
+    <meta name="author" content="XtayConnect AfricaTM">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{% static 'images/icons/favicon.ico' %}">
@@ -68,7 +65,7 @@
 <body>
     <div class="page-wrapper">
         <header class="header">
-            <div class="header-top">
+            <!-- <div class="header-top">
                 <div class="container">
                    
                     <div class="header-right">
@@ -85,11 +82,16 @@
                                     <li><a href="#">Contact</a></li>
                                     <li><a href="#" class="login-link">LOG IN</a></li>
                                 </ul>
-                            </div><!-- End .header-menu -->
-                        </div><!-- End .header-dropown -->
-                    </div><!-- End .header-right -->
-                </div><!-- End .container -->
-            </div><!-- End .header-top -->
+                            </div>
+                            <!-- End .header-menu -->
+                        <!-- </div> -->
+                        <!-- End .header-dropown -->
+                    <!-- </div> -->
+                    <!-- End .header-right -->
+                <!-- </div> -->
+                <!-- End .container -->
+            <!-- </div> -->
+            <!-- End .header-top -->
 
             <div class="header-middle">
                 <div class="container">
@@ -129,7 +131,7 @@
                     <div class="header-right">
                         <div class="header-contact">
                             <span>Call us now</span>
-                            <a href="tel:#"><strong>+123 5678 890</strong></a>
+                            <a href="tel:+233271494929"><strong>+233271494929</strong></a>
                         </div><!-- End .header-contact -->
 
                         <div class="dropdown cart-dropdown">
@@ -228,6 +230,7 @@
                             {% if user.is_staff %}
                             <li>
                                 <a class="btn pulse" href="{% url 'create_form' %}">Create</a>
+
                             </li>
                             {% endif %}
                         </ul>
@@ -435,7 +438,7 @@
                         placeholder="Email address" required>
                     <input type="submit" class="btn" value="Go!">
                 </div><!-- End .from-group -->
-    </form>
+    <!-- </form> -->
     <!-- <div class="newsletter-subscribe">
         <div class="checkbox">
             <label>

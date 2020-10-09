@@ -93,7 +93,7 @@
                                             <b class="btn mb-4 text-light btn-block" style="background-color: #CE7D0E;" id="saved-message"></b>
                                     </div>  
                                     
-                                    <p>{{product.description}}</p>
+                                    <p>{{product.description|safe}}</p>
 								 <h3><a id="checkout" href="{% url 'orders:checkout' %}"></a></h3>
                                 </div>
 								</form>

@@ -18,3 +18,4 @@ django-allauth==0.41.0
 easy-thumbnails==2.7  
 hashids==0.8.4
 django-ckeditor==5.9.0
+django-allauth==0.41.0

@@ -7,9 +7,9 @@
 {% block content %}
 <nav class="breadcrumb" style="margin-left:68%;font-size: larger;">
 
-  <a style="background-color: #270949;color: white;" title="all items given out" class="breadcrumb-item btn" href="{% url 'orders:orders' %}">Orders</a>
+  <a style="background-color: #270949;color: white;" title="items bought"  data-toggle="tooltip" class="breadcrumb-item btn" href="{% url 'orders:orders' %}">Orders</a>
 
-      <a style="background-color: #270949;color: white;" title="" class="breadcrumb-item btn" href="/">Home</a>
+      <a style="background-color: #270949;color: white;" title="go home" data-toggle="tooltip" class="breadcrumb-item btn" href="/">Home</a>
 
 </nav>
 <div class="container">
@@ -25,7 +25,7 @@
                     <input class="my-3" type="text" name="q" id="" placeholder="search" value="{{ request.GET.q }}">
                     <button type="submit">search</button>
                     <hr>
-                    <thead class="thead-light ">
+                    <thead class="thead-light">
                       <tr>
                         <th scope="col">#</th>
                         <th scope="col">Name</th>
@@ -50,7 +50,7 @@
                         <td scope="row"> {{ orders.paid|yesno:'YES,NO' }} </td>
 
                         <td scope="row"> {{ orders.date_add }} </td>
-                          <td scope="row"><a class="text-info" href="{% url 'orders:order_items' orders.order_number orders.pk %}">View</a></td>
+                          <td scope="row"><a class="text-info btn" href="{% url 'orders:order_items' orders.order_number orders.pk %}">View</a></td>
                            
                       </tr>
                       {% empty %}

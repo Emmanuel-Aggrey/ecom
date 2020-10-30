@@ -7,8 +7,8 @@ urlpatterns=[
     path('detail/<slug:slug>/',views.product_datilview, name='product-detail'),
     path('category/<int:id>/',views.category_view,name='categories'),
     path("register/",views.register,name="register"),
-    path("login/",views.login,name="login"),
-    path("logout/",views.logout,name="logout"),
+    # path("login/",views.login,name="login"),
+    # path("logout/",views.logout,name="logout"),
 
 
     # createview

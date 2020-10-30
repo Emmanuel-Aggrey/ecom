@@ -313,11 +313,11 @@
 
                                         <ul class="links">
                                             <li><a href="{% url 'about' %}">About Us</a></li>
-                                            <li><a href="#">Contact Us</a></li>
+                                            <!-- <li><a href="#">Contact Us</a></li> -->
                                             <li><a href="#">My Account</a></li>
                                             <li><a href="#">Orders History</a></li>
                                             <li><a href="#">Advanced Search</a></li>
-                                            <li><a href="#" class="login-link">Login</a></li>
+                                            <li><a href="{% url 'account_login' %}" class="login-link">Login</a></li>
                                         </ul>
                                     </div><!-- End .widget -->
                                 </div><!-- End .col-md-3 -->
@@ -418,8 +418,13 @@
                         </ul>
                     </li> -->
                     <li><a href="{% url 'about' %}">Contact Us</a></li>
-                    <li><a href="#">LOGIN<span class="tip tip-hot"></span></a></li>
-                    <li><a href="register#register">REGISTER</a></li>
+                  {% if user.is_authenticated %}
+                  <li class=""><a href="{% url 'account_logout' %}">LOGOUT</a>
+
+                  {% else  %}
+                  <li><a href="{% url 'account_login' %}">LOGIN<span class="tip tip-hot"></span></a></li>
+                  <li><a href="{% url 'account_signup' %}">REGISTER</a></li>
+                  {% endif %}
                 </ul>
             </nav><!-- End .mobile-nav -->
 

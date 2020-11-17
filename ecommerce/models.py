@@ -55,7 +55,7 @@ class Product(Base_Model):
     name = models.CharField(max_length=100)
     image = models.FileField(upload_to='images/%Y/%m/%d/')
     price = models.DecimalField(decimal_places=2, max_digits=20)
-    description =RichTextField()
+    description =RichTextField(blank=True, null=True)
     is_available = models.BooleanField(default=True)
     slug = models.SlugField(unique=True, editable=False, null=True, blank=True)
 

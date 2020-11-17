@@ -5,6 +5,7 @@
 
 {% block content %}
 <main class="main">
+    {% comment %}
     <div class="home-slider-container">
         <div class="home-slider owl-carousel">
             {% for products in popular|slice:':5' %}
@@ -25,8 +26,12 @@
             </div><!-- End .home-slide -->
             {% endfor %}
            
-        </div><!-- End .home-slider -->
-    </div><!-- End .home-slider-container -->
+        </div>
+       
+        <!-- End .home-slider -->
+    </div>
+    {% endcomment %}
+    <!-- End .home-slider-container -->
 
     <div class="info-boxes-container">
         <div class="container">

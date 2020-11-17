@@ -75,7 +75,7 @@ class Product(Base_Model):
 
     def save(self, *args, **kwargs):
         id_ = Product.objects.values_list('pk', flat=True).count()
-        id_ = str(hashids.encode(id_))
+        id_ = str(id_)
         slug = slugify(self.name)
         self.slug =  slug+'-'+id_
         return super().save(*args, **kwargs)

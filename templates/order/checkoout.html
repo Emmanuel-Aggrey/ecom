@@ -37,7 +37,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <h4 class="page-header">Checkout</h4>
+            <h4 class="page-headers">Checkout</h4>
             <form method="post">
                 {% csrf_token %}
                 {{  form|crispy}}<br>
@@ -51,7 +51,7 @@
                
             </form>
             <div class="col-md-6">
-                <div class="page-header">
+                <div class="page-headers">
                     Your Order
                 </div>
                 <ul class="list-group">
@@ -134,4 +134,11 @@
 
     </div>
 </div>
+{% if user.is_authenticated %}
+    <script> 
+    document.getElementById('id_name').value="{{request.user.get_full_name}}"
+    document.getElementById('id_email').value="{{request.user.email}}"
+    
+    </script>
+{% endif %}
 {% endblock %}

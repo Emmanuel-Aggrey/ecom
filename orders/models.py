@@ -23,7 +23,7 @@ class Order(Base_Model):
     address = models.CharField(max_length=150)
     # phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+233'. Up to 15 digits allowed.")
     phone_number = models.CharField(max_length=15, blank=False)
-    city = models.CharField(max_length=100)
+    city = models.CharField('City/Closest Landmark',max_length=100)
     # created = models.DateTimeField(auto_now_add=True)
     # updated = models.DateTimeField(auto_now=True)
     paid = models.BooleanField(default=False)

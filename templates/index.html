@@ -31,6 +31,52 @@
         <!-- End .home-slider -->
     </div>
     {% endcomment %}
+
+    <div class="container">
+        <div class="row">
+        {% for product in products|slice:":8" %}
+        <div class="col-md-3">
+                                 
+            <div class="product-default">
+                <figure>
+                   
+                    <a href="{{product.get_absolute_url}}">
+                        <img src="{{product.image.url}}">`
+                    </a>
+                </figure>
+                <div class="product-details">
+                    <div class="ratings-container">
+                        <div class="product-ratings">
+                            <span class="ratings" style="width:400"></span><!-- End .ratings -->
+                        </div><!-- End .product-ratings -->
+                    </div><!-- End .product-container -->
+                  
+                    <h2 class="product-title">
+                        <a id="product-name" href="{{product.get_absolute_url}}">{{product.name}}</a>
+                        <h6 id="product-id">{{product.id}}</h6>
+                    </h2>
+                    <div class="price-box">
+                        <span class="product-price">GH₵ {{product.price}}</span>
+                    </div><!-- End .price-box -->
+                    <div class="product-action">
+                        <a href="#" class="btn-icon-wish"><i class="icon-heart"></i></a>
+                        <button class="btn-icon btn-add-cart" style="background-color: #4654A3;color: white;" data-toggle="modal"
+                            data-target="#addCartModal"><i class="icon-bag"></i>ADD TO CART</button>
+                        <a href="{{product.get_absolute_url}}" class="btn-quickview" title="Quick View"><i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div><!-- End .product-details -->
+            </div>
+         
+          
+     
+          
+    </div>
+        {% endfor %}
+        </div>
+    </div><!-- End .container -->
+
+
     <!-- End .home-slider-container -->
 
     <div class="info-boxes-container">

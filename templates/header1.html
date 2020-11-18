@@ -224,7 +224,7 @@
                             </li>
                            
                             {% if user.is_authenticated %}
-                            <li class="float-right"><a>{{user.first_name}}</a></li>
+                            <!-- <li class="float-right"><a>{{user.first_name}}</a></li> -->
                             <li class="float-right"><a href="{% url 'account_logout' %}">LOGOUT</a>
                             </li>
                             {%else %}

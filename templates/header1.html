@@ -136,7 +136,7 @@
                     <div class="header-right">
                         <div class="header-contact">
                             <span>Call us now</span>
-                            <a href="tel:+233271494929"><strong>+233271494929</strong></a>
+                            <a href="tel:+233206494929"><strong>+233206494929</strong></a>
                         </div><!-- End .header-contact -->
 
                         <div class="dropdown cart-dropdown">
@@ -211,7 +211,7 @@
 
                                 <ul>
                                   
-                                    <li><a href="{% url 'about' %}">About Us</a></li>
+                                    <!-- <li><a href="{% url 'about' %}">About Us</a></li> -->
                                     
                                     <li><a href="#">Contact Us</a></li>
                                     <hr>
@@ -293,12 +293,12 @@
                                             </li>
                                             <li>
                                                 <span class="contact-info-label">you can also reach us
-                                                    <a class="d-lg-none" style="color:#00A751;" href="https://api.whatsapp.com/send?phone=+233240699506&text=hello {% if user.is_authenticated %}{{user}}:
+                                                    <a class="d-lg-none" style="color:#00A751;" href="https://api.whatsapp.com/send?phone=+233206494929&text=hello {% if user.is_authenticated %}{{user}}:
                                                       {% endif %}feel free to talk to us." target="_blank"
                                                       rel="noopener noreferrer">via whatsapp 
                                                     </a>
                                                     <a class="d-none d-lg-block" style="color:#00A751;"
-                                                      href="https://web.whatsapp.com/send?phone=+233240699506&text=hello {% if user.is_authenticated %}{{user}}: {% endif %}feel free to talk to us."
+                                                      href="https://web.whatsapp.com/send?phone=+233206494929&text=hello {% if user.is_authenticated %}{{user}}: {% endif %}feel free to talk to us."
                                                       target="_blank" rel="noopener noreferrer">
                                                      via whatsapp 
                                        
@@ -312,7 +312,7 @@
                                         <h4 class="widget-title">My Account</h4>
 
                                         <ul class="links">
-                                            <li><a href="{% url 'about' %}">About Us</a></li>
+                                            <!-- <li><a href="{% url 'about' %}">About Us</a></li> -->
                                             <!-- <li><a href="#">Contact Us</a></li> -->
                                             <li><a href="#">My Account</a></li>
                                             <li><a href="#">Orders History</a></li>
@@ -401,7 +401,6 @@
                                 </ul> -->
                             </li>
                            
-                            <li><a href="{% url 'about' %}">About</a></li>
                           
                             <li><a href="#">Forgot Password</a></li>
                             
@@ -417,7 +416,7 @@
                             <li><a href="#">Blog Post</a></li>
                         </ul>
                     </li> -->
-                    <li><a href="{% url 'about' %}">Contact Us</a></li>
+                   
                   {% if user.is_authenticated %}
                   <li class=""><a href="{% url 'account_logout' %}">LOGOUT</a>
 

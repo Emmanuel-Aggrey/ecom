@@ -19,6 +19,8 @@ class Base_Model(models.Model):
 
 class Category(Base_Model):
     name = models.CharField(max_length=200, unique=True)
+    is_available = models.BooleanField(default=True)
+
 
     def get_absolute_url(self):
         return reverse("category_page")
@@ -34,6 +36,7 @@ class Sub_Category(Base_Model):
     category = models.ForeignKey(
         Category, on_delete=models.CASCADE, related_name='sub_categories')
     name = models.CharField(max_length=200)
+    is_available = models.BooleanField(default=True)
 
     # create a new slug
     # def save(self, *args, **kwargs):

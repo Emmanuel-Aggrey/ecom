@@ -184,13 +184,20 @@
                                                 <div class="col-lg-4 col-md-6">
                                                    
                                                     <div class="menu-title">
-                                                        <a class="" href="#">{{navs.name}}<span class="tip tip-new"></span></a>
+                                                        <a class="" href="#">
+                                                            {% if navs.is_available %}
+                                                            {{navs.name}}
+                                                            {% endif %}
+                                                            <span class="tip tip-new"></span></a>
                                                     </div>
                                                   
                                                     <ul>
                                                         {% for items in navs.sub_categories.all %}
+                                                        {% if items.is_available %}
                                                         <li><a href="{% url 'categories' items.id %}">
-                                                                {{items.name}}<span class="tip tip-hot"></span></a></li>
+                                                           
+                                                            {{items.name}}<span class="tip tip-hot"></span></a></li>
+                                                            {% endif %}
                                                                 {% endfor %}
                                                     </ul>
                                                    
@@ -205,24 +212,25 @@
                                 
                                 
                             </li>
-                           
+                            {% if user.is_staff %}
                             <li>
+                               
                                 <a href="#" class="sf-with-ul">Pages</a>
 
                                 <ul>
                                   
                                     <!-- <li><a href="{% url 'about' %}">About Us</a></li> -->
                                     
-                                    <li><a href="#">Contact Us</a></li>
+                                    <!-- <li><a href="#">Contact Us</a></li> -->
                                     <hr>
-                                    {% if user.is_staff %}
+                                  
                                     <li ><a title="orders placed by customers" href="{% url 'orders:orders' %}">Orders Placed</a></li>
 
-                                    {% endif %}
+                                   
                                 </ul>
-                                
+                               
                             </li>
-                           
+                            {% endif %}
                             {% if user.is_authenticated %}
                             <!-- <li class="float-right"><a>{{user.first_name}}</a></li> -->
                             <li class="float-right"><a href="{% url 'account_logout' %}">LOGOUT</a>
@@ -238,6 +246,8 @@
 
                             </li>
                             {% endif %}
+                            <li><a href="{% url 'about' %}">About Us</a></li>
+
                         </ul>
                     </nav>
                 </div><!-- End .header-bottom -->
@@ -312,7 +322,7 @@
                                         <h4 class="widget-title">My Account</h4>
 
                                         <ul class="links">
-                                            <!-- <li><a href="{% url 'about' %}">About Us</a></li> -->
+                                            <li><a href="{% url 'about' %}">About Us</a></li>
                                             <!-- <li><a href="#">Contact Us</a></li> -->
                                             <li><a href="#">My Account</a></li>
                                             <li><a href="#">Orders History</a></li>
@@ -424,7 +434,10 @@
                   <li><a href="{% url 'account_login' %}">LOGIN<span class="tip tip-hot"></span></a></li>
                   <li><a href="{% url 'account_signup' %}">REGISTER</a></li>
                   {% endif %}
+                  <li class=""><a href="{% url 'about' %}">About Us</a></li>
+
                 </ul>
+
             </nav><!-- End .mobile-nav -->
 
             <div class="social-icons">
